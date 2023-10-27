@@ -6,7 +6,7 @@ Generate AI images on M1/M2 macs in only a few seconds.
 
 Prompt: `A realistic photo of a german shepard riding a motorcycle through Tokyo at night`
 
-
+[Cloud version Replicate.com](https://replicate.com/luosiallen/latent-consistency-model)
 
 # Usage
 
