@@ -1,4 +1,14 @@
-# Notes
+# AI Image Generator
+
+Generate AI images on M1/M2 macs in only a few seconds.
+
+![Example Output](example-output1.png)
+
+Prompt: `A realistic photo of a german shepard riding a motorcycle through Tokyo at night`
+
+
+
+# Usage
 
 To run
 ```bash
@@ -11,8 +21,11 @@ python generate.py
 # OR
 # Run the script directly with arguments
 python main.py \
-  "a beautiful apple floating in outer space, like a planet" \
-  --steps 4 --width 512 --height 512
+  "a realistic photo of a german shepard riding a motorcycle through Tokyo at night" \
+  --steps 10 --width 512 --height 512
+
+# Setting the --continuous flag will cause the script to keep outputting images
+# until cancelled by the user
 ```
 
 Hugging Face Hub model files are cached in `~/.cache/huggingface`
