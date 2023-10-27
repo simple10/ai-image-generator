@@ -54,6 +54,8 @@ def main():
             print("\nStopped by user.")
 
     elif args.interactive:
+        output_path = predictor.predict(args.prompt, args.width, args.height, args.steps, args.seed)
+        print(f"Output image saved to: {output_path}")
         try:
             while True:
                 prompt = input("Enter your image prompt: ")

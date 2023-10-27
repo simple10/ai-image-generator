@@ -104,3 +104,4 @@ Using seed: 48404
 | --steps       | int   | 8       | The number of inference steps.                                |
 | --seed        | int   | None    | Seed for random number generation.                            |
 | --continuous  | flag  | False   | Enable continuous generation.                                 |
+| --interactive | flag  | False   | Enable continuous prompting to interactively generate images. |
