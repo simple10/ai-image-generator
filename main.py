@@ -4,6 +4,7 @@ import argparse
 import time
 from diffusers import DiffusionPipeline
 
+
 class Predictor:
     def __init__(self):
         self.pipe = self._load_model()
@@ -51,6 +52,16 @@ def main():
                 print(f"Output image saved to: {output_path}")
         except KeyboardInterrupt:
             print("\nStopped by user.")
+
+    elif args.interactive:
+        try:
+            while True:
+                prompt = input("Enter your image prompt: ")
+                output_path = predictor.predict(prompt, args.width, args.height, args.steps, args.seed)
+                print(f"Output image saved to: {output_path}")
+        except KeyboardInterrupt:
+            print("\nStopped by user.")
+
     else:
         output_path = predictor.predict(args.prompt, args.width, args.height, args.steps, args.seed)
         print(f"Output image saved to: {output_path}")
@@ -63,6 +74,7 @@ def parse_args():
     parser.add_argument("--steps", type=int, default=8, help="The number of inference steps.")
     parser.add_argument("--seed", type=int, default=None, help="Seed for random number generation.")
     parser.add_argument("--continuous", action='store_true', help="Enable continuous generation.")
+    parser.add_argument("--interactive", action='store_true', help="Enable interactive mode.")
     return parser.parse_args()
 
 if __name__ == "__main__":
