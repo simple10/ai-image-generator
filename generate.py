@@ -1,9 +1,13 @@
 import subprocess
 
 prompt = input("Enter your image prompt: ")
-print("Generating image with 10 steps 512x512...")
 
+steps = 20
+width = 512
+height = 512
+
+print(f"Generating {width}x{height} image with {steps} steps...")
 
 venv_python = './venv/bin/python'
-args = [venv_python, 'main.py', prompt, '--steps=10', '--width=512', '--height=512']
+args = [venv_python, 'main.py', prompt, f'--steps={steps}', f'--width={width}', f'--height={height}']
 subprocess.run(args)
