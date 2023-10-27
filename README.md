@@ -1,3 +1,29 @@
+# Notes
+
+To run
+```bash
+# Run this once before running the image generator script
+source venv/bin/activate
+
+# Generate an image with interactive prompt
+python generate.py
+
+# OR
+# Run the script directly with arguments
+python main.py \
+  "a beautiful apple floating in outer space, like a planet" \
+  --steps 4 --width 512 --height 512
+```
+
+Hugging Face Hub model files are cached in `~/.cache/huggingface`
+
+There's over 5GB of data.
+
+```bash
+du -sh ~/.cache/huggingface
+```
+
+
 # Run latent consistency models on your Mac
 
 Latent consistency models (LCMs) are based on Stable Diffusion, but they can generate images much faster, needing only 4 to 8 steps for a good image (compared to 25 to 50 steps). [Simian Luo et al](https://arxiv.org/abs/2310.04378) released the first Stable Diffusion distilled model. It’s distilled from the Dreamshaper fine-tune by incorporating classifier-free guidance into the model’s input.
